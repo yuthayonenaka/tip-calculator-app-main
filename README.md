@@ -20,7 +20,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 ### Links
 
 - Solution URL: [https://github.com/yuthayonenaka/tip-calculator-app-main](https://github.com/yuthayonenaka/tip-calculator-app-main)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://magical-eclair-ee7fa8.netlify.app](https://magical-eclair-ee7fa8.netlify.app)
 
 ## My process
 
