@@ -33,7 +33,6 @@ const displayToggle = function () {
       inputTip.value = "";
     } else if (!inputTip.value && !numberOfPeopleEl.value && !billInput.value) {
       buttonReset.classList.remove("active");
-      t;
     } else if (!billInput.value) {
       tipAmountEl.textContent = `$0.00`;
       totalAmountEl.textContent = `$0.00`;
@@ -47,6 +46,9 @@ const displayToggle = function () {
       inputTip.value = "";
     } else if (!inputTip.value && !numberOfPeopleEl.value && !billInput.value) {
       buttonReset.classList.remove("active");
+    } else if (!numberOfPeopleEl.value) {
+      tipAmountEl.textContent = `$0.00`;
+      totalAmountEl.textContent = `$0.00`;
     }
   });
 
@@ -55,6 +57,9 @@ const displayToggle = function () {
       buttonReset.classList.add("active");
     } else if (!inputTip.value && !numberOfPeopleEl.value && !billInput.value) {
       buttonReset.classList.remove("active");
+    } else if (!inputTip.value) {
+      tipAmountEl.textContent = `$0.00`;
+      totalAmountEl.textContent = `$0.00`;
     }
   });
 };
@@ -110,7 +115,7 @@ buttonTip.forEach((btn) => {
 
 inputTip.addEventListener("input", function () {
   const tipPercentage = +this.value / 100;
-  displayUI(tipPercentage);
+  if (this.value) displayUI(tipPercentage);
 });
 
 buttonReset.addEventListener("click", function () {
