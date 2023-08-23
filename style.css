@@ -1,0 +1,275 @@
+/* makes sizing simpler */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* dark mode user-agent-styles */
+
+html {
+  color-scheme: dark light;
+  font-size: 62.5%;
+}
+
+/* min body height */
+
+body {
+  background-color: hsl(185, 41%, 84%);
+  font-size: 2.4rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  overflow: auto;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.hidden {
+  display: none;
+}
+section {
+  width: 100%;
+  margin-top: 12rem;
+}
+.heading-tertiary,
+.invalid,
+.amount > p {
+  font-size: 1.4rem;
+}
+
+.invalid {
+  color: hsl(0, 76%, 60%);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 5rem;
+  letter-spacing: 0.9rem;
+  color: hsl(183, 100%, 20%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(186, 14%, 43%);
+  margin-bottom: 1rem;
+}
+
+.tip-calculator-container {
+  width: 80%;
+  max-width: 80.5rem;
+  min-width: 80.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.6rem;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 20px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 10px 10px 30px hsl(0, 0%, 0%, 0.08);
+}
+
+.left-container {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  padding: 1.4rem 1.4rem;
+  gap: 3rem;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input > input {
+  text-align: right;
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  border: none;
+  width: 100%;
+  padding: 0.2rem 1.4rem;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: 2px solid hsl(172, 67%, 45%);
+}
+
+.invalid-border {
+  outline: 2px solid hsl(0, 76%, 60%);
+  border-radius: 5px;
+}
+
+.input > input::-webkit-input-placeholder {
+  color: hsl(183, 100%, 15%, 0.3);
+}
+
+.input > img {
+  position: absolute;
+  left: 1.4rem;
+}
+
+.select-tip-container {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.4rem;
+}
+
+.tip {
+  border-radius: 5px;
+  border: none;
+}
+.tip:not(:last-child) {
+  padding: 0.5rem 3rem;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(189, 41%, 97%);
+}
+
+.select-tip-container > input {
+  width: 100%;
+  text-align: center;
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+}
+
+input::-webkit-input-placeholder {
+  color: hsl(183, 100%, 15%, 0.6);
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 16px;
+  padding: 5rem 3.6rem 3.6rem 3.6rem;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.amount > p {
+  display: flex;
+  color: hsl(189, 41%, 97%);
+  flex-direction: column;
+}
+
+.amount > p > span {
+  font-size: 1.2rem;
+  opacity: 0.4;
+}
+
+.amount > div {
+  font-size: 4rem;
+  color: hsl(172, 67%, 45%);
+}
+
+.btn-tip {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 0.8rem 0;
+  font-size: 1.6rem;
+  background-color: hsl(183, 100%, 20%);
+  color: hsl(183, 100%, 15%, 0.5);
+}
+
+.btn-tip.active:hover,
+.tip.tip:not(:last-child):hover {
+  background-color: hsl(172, 67%, 80%);
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+.btn-tip.active,
+.tip.tip:not(:last-child):active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+
+/* Media Queries */
+
+@media only screen and (width <= 64em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (width <= 48em) {
+  body {
+    min-height: 100vh;
+  }
+  section {
+    margin-top: 4rem;
+  }
+
+  h1 {
+    margin-bottom: 3rem;
+  }
+
+  .tip-calculator-container {
+    width: 100%;
+    min-width: 100%;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    border-radius: 30px 30px 0 0;
+    gap: 4rem;
+  }
+
+  .left-container {
+    padding: 0 0;
+    grid-template-rows: repeat(3, max-content);
+  }
+
+  .right-container {
+    display: flex;
+    height: 30rem;
+    gap: 2rem;
+  }
+
+  .select-tip-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .tip:not(:last-child) {
+    padding: 1rem 0;
+  }
+
+  .btn-tip {
+    padding: 0.9rem 0;
+    font-size: 2rem;
+  }
+}

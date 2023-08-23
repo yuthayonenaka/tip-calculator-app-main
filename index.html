@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <header>
+          <h1>SPLI<br />TTER</h1>
+        </header>
+        <div class="tip-calculator-container">
+          <div class="left-container">
+            <div class="input-container">
+              <div class="header">
+                <label for="bill" class="heading-tertiary">Bill</label>
+                <p class="hidden invalid" id="invalid">Can't be zero</p>
+              </div>
+              <div class="input">
+                <img src="images/icon-dollar.svg" alt="icon of dollar" />
+                <input type="number" id="bill" placeholder="0" />
+              </div>
+            </div>
+
+            <div class="input-container">
+              <div class="header">
+                <h3 class="heading-tertiary">Select Tip %</h3>
+              </div>
+              <div class="select-tip-container">
+                <button id="button-tip" class="tip" data-number="0.5">
+                  5%
+                </button>
+                <button id="button-tip" class="tip" data-number="0.10">
+                  10%
+                </button>
+                <button id="button-tip" class="tip" data-number="0.15">
+                  15%
+                </button>
+                <button id="button-tip" class="tip" data-number="0.25">
+                  25%
+                </button>
+                <button id="button-tip" class="tip" data-number="0.50">
+                  50%
+                </button>
+                <input
+                  id="input-tip"
+                  type="number"
+                  class="tip"
+                  placeholder="Custom"
+                />
+              </div>
+            </div>
+
+            <div class="input-container">
+              <div class="header">
+                <label for="number-of-people" class="heading-tertiary"
+                  >Number of People</label
+                >
+                <p class="hidden invalid" id="invalid">Can't be zero</p>
+              </div>
+              <div class="input">
+                <img src="images/icon-person.svg" alt="icon of person" />
+                <input type="number" id="number-of-people" placeholder="0" />
+              </div>
+            </div>
+          </div>
+
+          <div class="right-container">
+            <div class="amount-container">
+              <div class="amount">
+                <p>Tip Amount<span>/ person</span></p>
+                <div class="tip-amount">$0.00</div>
+              </div>
+              <div class="amount">
+                <p>Total<span>/ person</span></p>
+                <div class="total-amount">$0.00</div>
+              </div>
+            </div>
+            <button class="btn-tip" id="button-reset">RESET</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
