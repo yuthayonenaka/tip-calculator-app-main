@@ -1,8 +1,8 @@
 const billInput = document.querySelector("#bill");
 
-const buttonTip = document.querySelectorAll("#button-tip");
+const buttonTip = document.querySelectorAll(".button-tip");
 
-const inputTip = document.querySelector("#input-tip");
+const inputTip = document.querySelector(".input-tip");
 
 const numberOfPeopleEl = document.querySelector("#number-of-people");
 
@@ -10,7 +10,7 @@ const tipAmountEl = document.querySelector(".tip-amount");
 
 const totalAmountEl = document.querySelector(".total-amount");
 
-const invalidEl = document.querySelectorAll(`#invalid`);
+const invalidEl = document.querySelectorAll(`.invalid`);
 
 const inputEl = document.querySelectorAll(".input");
 
@@ -21,7 +21,7 @@ const countTipAmount = function (bill, tipPercentage, numberOfPeople) {
 };
 
 const countTotalAmount = function (bill, tip, numberOfPeople) {
-  return bill + tip;
+  return (bill + tip) / numberOfPeople;
 };
 
 const displayToggle = function () {
@@ -121,3 +121,4 @@ inputTip.addEventListener("input", function () {
 buttonReset.addEventListener("click", function () {
   reset();
 });
+
