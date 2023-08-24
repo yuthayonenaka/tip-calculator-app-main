@@ -29,7 +29,6 @@ body {
   font-size: 2.4rem;
   font-family: "Space Mono", monospace;
   font-weight: 700;
-  overflow: auto;
 }
 
 /* responsive images/videos */
@@ -273,3 +272,4 @@ input::-webkit-input-placeholder {
     font-size: 2rem;
   }
 }
+
